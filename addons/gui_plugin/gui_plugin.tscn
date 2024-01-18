@@ -1,0 +1,232 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxrk3ojm27oya"]
+
+[ext_resource type="Script" path="res://addons/gui_plugin/main_gui_plugin.gd" id="1_f305t"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_yt45l"]
+
+[node name="Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_f305t")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="TabContainer" type="TabContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GridContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/TabContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="GridContainer/TabContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Square"
+
+[node name="Control" type="VBoxContainer" parent="GridContainer/TabContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="GridContainer/TabContainer/ScrollContainer/VBoxContainer/Control"]
+layout_mode = 2
+button_pressed = true
+button_group = SubResource("ButtonGroup_yt45l")
+text = "Ratio - Percent Wide"
+
+[node name="CheckBox4" type="CheckBox" parent="GridContainer/TabContainer/ScrollContainer/VBoxContainer/Control"]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_yt45l")
+text = "Ratio - Percent Height"
+
+[node name="CheckBox3" type="CheckBox" parent="GridContainer/TabContainer/ScrollContainer/VBoxContainer/Control"]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_yt45l")
+text = "Pixel"
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/TabContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label2" type="Label" parent="GridContainer/TabContainer/GridContainer"]
+layout_mode = 2
+text = "Width Percent"
+
+[node name="Label" type="HSlider" parent="GridContainer/TabContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+value = 10.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="Label3" type="Label" parent="GridContainer/TabContainer/GridContainer"]
+layout_mode = 2
+text = "Height Percent"
+
+[node name="Label4" type="HSlider" parent="GridContainer/TabContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+editable = false
+tick_count = 9
+ticks_on_borders = true
+
+[node name="Label2" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 21
+ticks_on_borders = true
+
+[node name="Label3" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 9
+ticks_on_borders = true
+
+[node name="Label4" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 9
+ticks_on_borders = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="GridContainer"]
+layout_mode = 2
+ratio = 1.7778
+stretch_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="GridContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="GridContainer/AspectRatioContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TopLeftRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+
+[node name="TopRightRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_right = -10.0
+grow_horizontal = 0
+
+[node name="BotLeftRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="BotRightRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="LeftCenterRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_bottom = -5.0
+grow_vertical = 2
+
+[node name="TopCenterRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -5.0
+offset_right = -5.0
+grow_horizontal = 2
+
+[node name="RightCenterRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BotCenterRect" type="ColorRect" parent="GridContainer/AspectRatioContainer/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -10.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label6" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 9
+ticks_on_borders = true
+
+[node name="Label7" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 9
+ticks_on_borders = true
+
+[node name="Label8" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 9
+ticks_on_borders = true
+
+[node name="Label9" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+tick_count = 9
+ticks_on_borders = true
